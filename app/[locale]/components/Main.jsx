@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import Steps from "./Steps";
 import Dictionary from "./Dictionary";
@@ -9,6 +9,7 @@ import Loading from "../assets/Loading";
 import { useLocale } from "next-intl";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
+import ReactPlayer from "react-player";
 
 export default function Main() {
   const isSubmitState = useSelector((state) => state.submitState.isSubmitState);
@@ -16,7 +17,8 @@ export default function Main() {
   const t = useTranslations("Index");
 
   const locale = useLocale();
-  const [word, setWord] = React.useState("");
+  const [word, setWord] = useState("");
+  const [showPlayer, setShowPlayer] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,11 +51,17 @@ export default function Main() {
 
   const channels = [
     { name: "NRT NEWS HD", logo: "/images/nrt.jpg", link: "#" },
-    { name: "K24 HD", logo: "https://upload.wikimedia.org/wikipedia/commons/f/ff/K24logo.png", link: "#" },
+    { name: "K24 HD", logo: "https://lens-storage.storage.googleapis.com/png/5672afe47fa4424b951ab301a3ef95bc", link: "#", isLive: true },
     { name: "GaliKurdistan", logo: "/images/gali.jpg", link: "#" },
     { name: "Kurdistan TV", logo: "/images/kurdistan.jpg", link: "#" },
     { name: "Bangawaz TV", logo: "/images/bangawaz.jpg", link: "#" },
   ];
+
+  const handleChannelClick = (channel) => {
+    if (channel.isLive) {
+      setShowPlayer(true);
+    }
+  };
 
   return (
     <div className="max-w-6xl mx-auto" dir={locale === "en" ? "ltr" : "rtl"}>
@@ -68,10 +76,10 @@ export default function Main() {
             <h2 className="text-2xl font-bold text-white">TV Shows</h2>
             <div className="mt-6 space-y-4">
               {channels.map((channel, index) => (
-                <a
+                <div
                   key={index}
-                  href={channel.link}
-                  className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700"
+                  onClick={() => handleChannelClick(channel)}
+                  className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 cursor-pointer"
                 >
                   <img
                     src={channel.logo}
@@ -79,7 +87,7 @@ export default function Main() {
                     className="w-16 h-16 mr-4"
                   />
                   <span className="text-white font-medium">{channel.name}</span>
-                </a>
+                </div>
               ))}
             </div>
           </div>
@@ -94,6 +102,27 @@ export default function Main() {
       )}
 
       {isSubmitState ? <Dictionary word={word} /> : <></>}
+
+      {/* Live Stream Player for Kurdistan 24 */}
+      {showPlayer && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="relative w-full max-w-3xl">
+            <ReactPlayer
+              url="https://d1x82nydcxndze.cloudfront.net/live/index.m3u8"
+              playing
+              controls
+              width="100%"
+              height="100%"
+            />
+            <button
+              onClick={() => setShowPlayer(false)}
+              className="absolute top-2 right-2 text-white bg-red-500 rounded-full p-2"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
