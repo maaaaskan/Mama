@@ -49,7 +49,7 @@ export default function Main() {
 
   const channels = [
     { name: "NRT NEWS HD", logo: "/images/nrt.jpg", link: "#" },
-    { name: "K24 HD", logo: "/images/k24.jpg", link: "#" },
+    { name: "K24 HD", logo: "https://upload.wikimedia.org/wikipedia/commons/f/ff/K24logo.png", link: "#" },
     { name: "GaliKurdistan", logo: "/images/gali.jpg", link: "#" },
     { name: "Kurdistan TV", logo: "/images/kurdistan.jpg", link: "#" },
     { name: "Bangawaz TV", logo: "/images/bangawaz.jpg", link: "#" },
