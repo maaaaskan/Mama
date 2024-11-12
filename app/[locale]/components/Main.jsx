@@ -52,9 +52,9 @@ export default function Main() {
   const channels = [
     { name: "NRT NEWS HD", logo: "/images/nrt.jpg", link: "#" },
     { name: "K24 HD", logo: "https://lens-storage.storage.googleapis.com/png/5672afe47fa4424b951ab301a3ef95bc", link: "#", isLive: true },
-    { name: "GaliKurdistan", logo: "/images/gali.jpg", link: "#" },
-    { name: "Kurdistan TV", logo: "/images/kurdistan.jpg", link: "#" },
-    { name: "Bangawaz TV", logo: "/images/bangawaz.jpg", link: "#" },
+    { name: "GaliKurdistan", logo: "https://play-lh.googleusercontent.com/kAQClJ5UdTFBNKNm8fpQ6whrA6CGDxifDgwzUBKEDb3hvlhnpbhM3isLX3J5nMiaR1Y", link: "#" },
+    { name: "Kurdistan TV", logo: "https://play-lh.googleusercontent.com/SgbXJV4VAv_oJl8oYXVMXWtbndydYkSs1tMhBvROkAuypdTB2Un4hcAJaEqh_7xV8WE", link: "#" },
+    { name: "Bangawaz TV", logo: "https://pbs.twimg.com/profile_images/838448888998674433/-rMfVqdL_400x400.jpg", link: "#" },
   ];
 
   const handleChannelClick = (channel) => {
