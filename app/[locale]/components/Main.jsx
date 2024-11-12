@@ -8,8 +8,6 @@ import { debounce } from "lodash";
 import Loading from "../assets/Loading";
 import { useLocale } from "next-intl";
 import { toast } from "sonner";
-import { motion } from "framer-motion";
-import ReactPlayer from "react-player";
 
 export default function Main() {
   const isSubmitState = useSelector((state) => state.submitState.isSubmitState);
@@ -18,7 +16,6 @@ export default function Main() {
 
   const locale = useLocale();
   const [word, setWord] = useState("");
-  const [showPlayer, setShowPlayer] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,19 +46,11 @@ export default function Main() {
     return true;
   };
 
-  const channels = [
-    { name: "NRT NEWS HD", logo: "/images/nrt.jpg", link: "#" },
-    { name: "K24 HD", logo: "https://lens-storage.storage.googleapis.com/png/5672afe47fa4424b951ab301a3ef95bc", link: "#", isLive: true },
-    { name: "GaliKurdistan", logo: "https://play-lh.googleusercontent.com/kAQClJ5UdTFBNKNm8fpQ6whrA6CGDxifDgwzUBKEDb3hvlhnpbhM3isLX3J5nMiaR1Y", link: "#" },
-    { name: "Kurdistan TV", logo: "https://play-lh.googleusercontent.com/SgbXJV4VAv_oJl8oYXVMXWtbndydYkSs1tMhBvROkAuypdTB2Un4hcAJaEqh_7xV8WE", link: "#" },
-    { name: "Bangawaz TV", logo: "https://pbs.twimg.com/profile_images/838448888998674433/-rMfVqdL_400x400.jpg", link: "#" },
+  const boxes = [
+    { image: "https://www.goranikurdi.com/img/artists/238.jpg?v=OQRJmZtfKE_8Yj_A3dyGoMXoMxXL6jeAuFgGtPX-qwU", text: "بێکەس", link: "#" },
+    { image: "https://kurdipedia.org/files/photos/2008/293.JPG?ver=20110917095358", text: "مەحوی", link: "#" },
+    { image: "https://www.kdp.info/grafik/uploaded/2024/NB__2024_07_16_h16m19s4__BE.jpg", text: "نێچیرڤان بارزانی", link: "#" },
   ];
-
-  const handleChannelClick = (channel) => {
-    if (channel.isLive) {
-      setShowPlayer(true);
-    }
-  };
 
   return (
     <div className="max-w-6xl mx-auto" dir={locale === "en" ? "ltr" : "rtl"}>
@@ -71,22 +60,20 @@ export default function Main() {
             {/* Existing form and header content */}
           </form>
 
-          {/* New TV Channels Section */}
+          {/* New Boxes Section */}
           <div className="px-4 py-8">
-            <h2 className="text-2xl font-bold text-white">TV Shows</h2>
-            <div className="mt-6 space-y-4">
-              {channels.map((channel, index) => (
+            <h2 className="text-2xl font-bold text-white">Image Boxes</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+              {boxes.map((box, index) => (
                 <div
                   key={index}
-                  onClick={() => handleChannelClick(channel)}
-                  className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 cursor-pointer"
+                  onClick={() => window.open(box.link, "_blank")}
+                  className="cursor-pointer bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
                 >
-                  <img
-                    src={channel.logo}
-                    alt={`${channel.name} Logo`}
-                    className="w-16 h-16 mr-4"
-                  />
-                  <span className="text-white font-medium">{channel.name}</span>
+                  <img src={box.image} alt={`Box ${index + 1}`} className="w-full h-48 object-cover" />
+                  <div className="p-4">
+                    <p className="text-white font-medium">{box.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -102,27 +89,6 @@ export default function Main() {
       )}
 
       {isSubmitState ? <Dictionary word={word} /> : <></>}
-
-      {/* Live Stream Player for Kurdistan 24 */}
-      {showPlayer && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="relative w-full max-w-3xl">
-            <ReactPlayer
-              url="https://d1x82nydcxndze.cloudfront.net/live/index.m3u8"
-              playing
-              controls
-              width="100%"
-              height="100%"
-            />
-            <button
-              onClick={() => setShowPlayer(false)}
-              className="absolute top-2 right-2 text-white bg-red-500 rounded-full p-2"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
