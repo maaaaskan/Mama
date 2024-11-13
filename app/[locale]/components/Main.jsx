@@ -8,6 +8,7 @@ import { debounce } from "lodash";
 import Loading from "../assets/Loading";
 import { useLocale } from "next-intl";
 import { toast } from "sonner";
+import Image from "next/image";
 
 export default function Main() {
   const isSubmitState = useSelector((state) => state.submitState.isSubmitState);
@@ -70,7 +71,7 @@ export default function Main() {
                   onClick={() => window.open(box.link, "_blank")}
                   className="cursor-pointer bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
                 >
-                  <img src={box.image} alt={`Box ${index + 1}`} className="w-full h-48 object-cover" />
+                  <Image src={box.image} alt={`Box ${index + 1}`} width={500} height={500} className="w-full h-48 object-cover" />
                   <div className="p-4">
                     <p className="text-white font-medium">{box.text}</p>
                   </div>
