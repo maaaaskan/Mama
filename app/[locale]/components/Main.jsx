@@ -48,7 +48,7 @@ export default function Main() {
   };
 
   const boxes = [
-    { image: "screenshots/8.png", text: "بێکەس", link: "#" },
+    { image: "https://kurdipedia.org/files/photos/2008/293.JPG?ver=20110917095358", text: "بێکەس", link: "#" },
     { image: "https://kurdipedia.org/files/photos/2008/293.JPG?ver=20110917095358", text: "مەحوی", link: "#" },
     { image: "https://www.gulanmedia.com/public/images/posts/20240716152452_original_15.jpg", text: "نێچیرڤان بارزانی", link: "#" },
   ];
