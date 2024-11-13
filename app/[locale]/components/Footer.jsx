@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTelegram } from "react-icons/fa";
+import { FaTelegram } from "react-icons/fa6";
 
 export default function Footer() {
   return (
