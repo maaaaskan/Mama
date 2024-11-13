@@ -48,9 +48,12 @@ export default function Main() {
   };
 
   const boxes = [
-    { image: "https://kurdipedia.org/files/photos/2008/293.JPG?ver=20110917095358", text: "بێکەس", link: "#" },
-    { image: "https://kurdipedia.org/files/photos/2008/293.JPG?ver=20110917095358", text: "مەحوی", link: "#" },
-    { image: "https://www.gulanmedia.com/public/images/posts/20240716152452_original_15.jpg", text: "نێچیرڤان بارزانی", link: "#" },
+    { image: "https://media.shafaq.com/media/arcella/1601489248526.jpg", text: "مــەلا مـــسـتەفا بــارزانـــی", link: "#" },
+    { image: "https://media.shafaq.com/media/arcella/1663854405602.jpg", text: "مـــــەسـعود بارزانـــی", link: "#" },
+    { image: "https://media.shafaq.com/media/arcella/1706716410644.jpg", text: "ئـــیدریس بارزانـــی", link: "#" },
+    { image: "https://media.shafaq.com/media/arcella/1731336095442.jpeg", text: "نێچیرڤان بارزانـــی", link: "#" },
+    { image: "https://media.shafaq.com/media/arcella/1722665416211.jpg", text: "مـــەسـرور بارزانـــی", link: "#" },
+    { image: "https://www.kurdstreet.com/wp-content/uploads/2018/05/55201810210233233.jpg", text: "مـــەنسور بارزانـــی", link: "#" },
   ];
 
   return (
