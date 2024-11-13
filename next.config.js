@@ -16,3 +16,11 @@ module.exports = withNextIntl({
     domains: ['www.kurdstreet.com', 'media.shafaq.com' , 'www.gulanmedia.com'], // Add external domains here
   },
 });
+
+// next.config.js
+module.exports = {
+  i18n: {
+    locales: ['en', 'ku'], // English and Kurdish as available languages
+    defaultLocale: 'en', // Default language
+  },
+};
