@@ -17,10 +17,3 @@ module.exports = withNextIntl({
   },
 });
 
-// next.config.js
-module.exports = {
-  i18n: {
-    locales: ['en', 'ku'], // English and Kurdish as available languages
-    defaultLocale: 'en', // Default language
-  },
-};
