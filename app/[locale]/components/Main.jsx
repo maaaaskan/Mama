@@ -48,13 +48,13 @@ export default function Main() {
   };
 
   const boxes = [
-    { image: "https://media.shafaq.com/media/arcella/1601489248526.jpg", text: "مــەلا مـــسـتەفا بــارزانـــی", link: "#" },
-    { image: "https://media.shafaq.com/media/arcella/1663854405602.jpg", text: "مـــــەسـعود بارزانـــی", link: "#" },
-    { image: "https://media.shafaq.com/media/arcella/1706716410644.jpg", text: "ئـــیدریس بارزانـــی", link: "#" },
-    { image: "https://media.shafaq.com/media/arcella/1731336095442.jpeg", text: "نێچیرڤان بارزانـــی", link: "#" },
-    { image: "https://media.shafaq.com/media/arcella/1722665416211.jpg", text: "مـــەسـرور بارزانـــی", link: "#" },
-    { image: "https://www.kurdstreet.com/wp-content/uploads/2018/05/55201810210233233.jpg", text: "مـــەنسور بارزانـــی", link: "#" },
-  ];
+  { image: "https://media.shafaq.com/media/arcella/1601489248526.jpg", text: "Mala Mustafa Barzani", link: "#" },
+  { image: "https://media.shafaq.com/media/arcella/1663854405602.jpg", text: "Masoud Barzani", link: "#" },
+  { image: "https://media.shafaq.com/media/arcella/1706716410644.jpg", text: "Idris Barzani", link: "#" },
+  { image: "https://media.shafaq.com/media/arcella/1731336095442.jpeg", text: "Nechirvan Barzani", link: "#" },
+  { image: "https://media.shafaq.com/media/arcella/1722665416211.jpg", text: "Masrour Barzani", link: "#" },
+  { image: "https://www.kurdstreet.com/wp-content/uploads/2018/05/55201810210233233.jpg", text: "Mansour Barzani", link: "#" },
+];
 
   return (
     <div className="max-w-6xl mx-auto" dir={locale === "en" ? "ltr" : "rtl"}>
