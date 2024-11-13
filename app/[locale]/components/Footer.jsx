@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSnapchat } from "react-icons/fa6";
+import { FaSnapchat } from "react-icons/fa5";
 
 export default function Footer() {
   return (
