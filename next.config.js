@@ -12,4 +12,7 @@ module.exports = withNextIntl({
 
     return config;
   },
+  images: {
+    domains: ['kurdipedia.org', 'www.kdp.info' , 'www.gulanmedia.com'], // Add external domains here
+  },
 });
