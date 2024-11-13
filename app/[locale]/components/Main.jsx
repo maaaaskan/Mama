@@ -48,7 +48,7 @@ export default function Main() {
   };
 
   const boxes = [
-    { image: "/screnshoots/8.png", text: "بێکەس", link: "#" },
+    { image: "/screenshots/8.png", text: "بێکەس", link: "#" },
     { image: "https://kurdipedia.org/files/photos/2008/293.JPG?ver=20110917095358", text: "مەحوی", link: "#" },
     { image: "https://www.kdp.info/grafik/uploaded/2024/NB__2024_07_16_h16m19s4__BE.jpg", text: "نێچیرڤان بارزانی", link: "#" },
   ];
